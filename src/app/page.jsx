@@ -3,8 +3,8 @@
 import Content2 from "@/components/Content2";
 import ListSB1 from "@/components/ListSB1";
 import ListSB2 from "@/components/ListSB2";
-import "/style/Style.css";
-import "/style/css_reset.css";
+import "@/style/Style.css";
+import "@/style/css_reset.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 

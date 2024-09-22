@@ -3,8 +3,8 @@
 import CDownContent from "@/components/CDownContent";
 import ListCSB1 from "@/components/ListCSb1";
 import Tema from "@/components/Tema";
-import "/style/Style2.css";
-import "/style/css_reset.css";
+import "@/style/Style2.css";
+import "@/style/css_reset.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
