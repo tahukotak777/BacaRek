@@ -15,16 +15,16 @@ export default function Navbar() {
               <a href="/AllCategory">ALL Category</a>
             </li>
             <li>
-              <a href="/business">Business</a>
+              <a href="/games">Games</a>
             </li>
             <li>
-              <a href="/sports">Sports</a>
+              <a href="/e-sports">E-Sports</a>
             </li>
             <li>
               <a href="/technology">Technology</a>
             </li>
             <li>
-              <a href="/entertainment">Entertainment</a>
+              <a href="/console-games">Console Games</a>
             </li>
           </ul>
         </nav>

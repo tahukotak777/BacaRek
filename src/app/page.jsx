@@ -10,27 +10,27 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [berita, setBerita] = useState([]);
-  const [popular, setPopular] = useState([]);
+  const [tip, setTip] = useState([]);
   const [baru, setBaru] = useState([]);
 
   const fatch = async () => {
     await axios
       .get(
-        "https://newsapi.org/v2/top-headlines?q=a&sortBy=relevancy&country=us&apiKey=ef4a710b2b664894ac22350bc3cb77fd"
+        "https://the-lazy-media-api.vercel.app/api/games?page=1"
       )
       .then((response) => setBerita(response.data))
       .catch((error) => new Error(error));
 
     await axios
       .get(
-        "https://newsapi.org/v2/everything?q=a&sortBY=popularity&apiKey=ef4a710b2b664894ac22350bc3cb77fd"
+        "https://the-lazy-media-api.vercel.app/api/tech/tip?page=1"
       )
-      .then((response) => setPopular(response.data))
+      .then((response) => setTip(response.data))
       .catch((error) => new Error(error));
 
     await axios
       .get(
-        "https://newsapi.org/v2/top-headlines?country=us&apiKey=ef4a710b2b664894ac22350bc3cb77fd"
+        "https://the-lazy-media-api.vercel.app/api/games/e-sport/?page=1"
       )
       .then((response) => setBaru(response.data))
       .catch((error) => new Error(error));
@@ -44,15 +44,15 @@ export default function Home() {
     <>
       <div className="content">
         <div className="main-content">
-          <img src={berita?.articles?.[0].urlToImage} alt="Bos Yamaha" />
-          <a href="/AllCategory">{berita?.articles?.[0].title}</a>
-          <p>{berita?.articles?.[0].content}</p>
+          <img src={berita?.[0]?.thumb} alt={berita?.[0]?.title} />
+          <a href="/AllCategory">{berita?.[0]?.title}</a>
+          <p>{berita?.[0]?.desc}</p>
         </div>
         <div className="sidebar">
           <ul>
-            {berita?.articles?.map((data, i) => {
+            {berita?.map((data, i) => {
               if (i < 5) {
-                return <ListSB1 src={data.urlToImage} title={data.title} />;
+                return <ListSB1 src={data.thumb} title={data.title} />;
               } else {
                 return null;
               }
@@ -64,18 +64,18 @@ export default function Home() {
       <section className="content">
         <div className="down-content">
           <h2>Berita Terbaru</h2>
-          {baru?.articles?.map((data, i) => {
+          {baru?.map((data, i) => {
             if (i < 5) {
-              return <Content2 img={data.urlToImage} title={data.title}/>;
+              return <Content2 img={data.thumb} title={data.title}/>;
             } else {
               return null;
             }
           })}
         </div>
         <div className="sidebar2">
-          <h2>Berita Utama</h2>
+          <h2>Tech tip</h2>
           <ol>
-            {popular?.articles?.map((data, i) => {
+            {tip?.map((data, i) => {
               if (i < 5) {
                 return <ListSB2 i={i} title={data.title} />;
               } else {

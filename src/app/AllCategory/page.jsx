@@ -9,70 +9,70 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function page() {
-  const [popB, setPopB] = useState([]);
-  const [terB, setTerB] = useState([]);
+  const [popG, setPopG] = useState([]);
+  const [terG, setTerG] = useState([]);
   const [popS, setPopS] = useState([]);
   const [terS, setTerS] = useState([]);
   const [popT, setPopT] = useState([]);
   const [terT, setTerT] = useState([]);
-  const [popE, setPopE] = useState([]);
-  const [terE, setTerE] = useState([]);
+  const [popCG, setPopCG] = useState([]);
+  const [terCG, setTerCG] = useState([]);
 
   const fatch = async () => {
     await axios
       .get(
-        "https://newsapi.org/v2/top-headlines?category=business&sortBy=popularity&apiKey=ef4a710b2b664894ac22350bc3cb77fd"
+        "https://the-lazy-media-api.vercel.app/api/games/news/?page=1"
       )
-      .then((response) => setTerB(response.data))
+      .then((response) => setTerG(response.data))
       .catch((error) => new Error(error));
 
     await axios
       .get(
-        "https://newsapi.org/v2/top-headlines?category=business&apiKey=ef4a710b2b664894ac22350bc3cb77fd"
+        "https://the-lazy-media-api.vercel.app/api/games?page=1"
       )
-      .then((response) => setPopB(response.data))
+      .then((response) => setPopG(response.data))
       .catch((error) => new Error(error));
 
     await axios
       .get(
-        "https://newsapi.org/v2/top-headlines?category=sports&sortBy=popularity&apiKey=ef4a710b2b664894ac22350bc3cb77fd"
+        "https://the-lazy-media-api.vercel.app/api/games/e-sport/?page=1"
       )
       .then((response) => setPopS(response.data))
       .catch((error) => new Error(error));
 
     await axios
       .get(
-        "https://newsapi.org/v2/top-headlines?category=sports&apiKey=ef4a710b2b664894ac22350bc3cb77fd"
+        "https://the-lazy-media-api.vercel.app/api/games/review?page=1"
       )
       .then((response) => setTerS(response.data))
       .catch((error) => new Error(error));
 
     await axios
       .get(
-        "https://newsapi.org/v2/top-headlines?category=technology&sortBy=popularity&apiKey=ef4a710b2b664894ac22350bc3cb77fd"
+        "https://the-lazy-media-api.vercel.app/api/tech/news?page=1"
       )
       .then((response) => setPopT(response.data))
       .catch((error) => new Error(error));
 
     await axios
       .get(
-        "https://newsapi.org/v2/top-headlines?category=technology&apiKey=ef4a710b2b664894ac22350bc3cb77fd"
+        "https://the-lazy-media-api.vercel.app/api/tech?page=1"
       )
       .then((response) => setTerT(response.data))
       .catch((error) => new Error(error));
 
     await axios
       .get(
-        "https://newsapi.org/v2/top-headlines?category=entertainment&sortBy=popularity&apiKey=ef4a710b2b664894ac22350bc3cb77fd"
+        "https://the-lazy-media-api.vercel.app/api/games/console-game?page=1"
       )
-      .then((response) => setPopE(response.data))
+      .then((response) => setPopCG(response.data))
       .catch((error) => new Error(error));
 
     await axios
       .get(
-        "https://newsapi.org/v2/top-headlines?category=entertainment&apiKey=ef4a710b2b664894ac22350bc3cb77fd"
+        "https://the-lazy-media-api.vercel.app/api/games/review?page=1"
       )
-      .then((response) => setTerE(response.data))
+      .then((response) => setTerCG(response.data))
       .catch((error) => new Error(error));
   };
 
@@ -83,29 +83,29 @@ export default function page() {
   return (
     <>
       <div className="content">
-        <Tema isi="business" />
+        <Tema isi="Games" />
         <div className="kategori-content">
           <h2>Berita Terpopuler</h2>
         </div>
         <div className="main-content">
           <div className="MainUtama-content">
             <img
-              src={popB?.articles?.[0].urlToImage}
-              alt={popB?.articles?.[0].title}
+              src={popG?.[0]?.thumb}
+              alt={popG?.[0]?.title}
             />
             <div className="MainText-content">
               <div>
                 <h1>1.</h1>
               </div>
               <div>
-                <h3>{popB?.articles?.[0].title}</h3>
-                <p>{popB?.articles?.[0].content}</p>
+                <h3>{popG?.[0]?.title}</h3>
+                <p>{popG?.[0]?.desc}</p>
               </div>
             </div>
           </div>
           <div className="sidebar">
             <ul>
-              {popB?.articles?.map((data, i) => {
+              {popG?.map((data, i) => {
                 if (i < 5 && i >= 1) {
                   return <ListCSB1 data={data} i={i} />;
                 } else {
@@ -121,7 +121,7 @@ export default function page() {
         <div class="main-content2">
           <h2>Berita Terbaru</h2>
           <div class="down-content2">
-            {terB?.articles?.map((data, i) => {
+            {terG?.map((data, i) => {
               if (i < 4) {
                 return <CDownContent data={data} />;
               } else {
@@ -132,32 +132,32 @@ export default function page() {
         </div>
       </section>
 
-      {/* /*------------------------------------------------buissnis end-----------------------------------------------------*/}
+      {/* /*------------------------------------------------Games end-----------------------------------------------------*/}
 
       <div className="content">
-        <Tema isi="sports" />
+        <Tema isi="E-Sports" />
         <div className="kategori-content">
           <h2>Berita Terpopuler</h2>
         </div>
         <div className="main-content">
           <div className="MainUtama-content">
             <img
-              src={popS?.articles?.[0].urlToImage}
-              alt={popS?.articles?.[0].title}
+              src={popS?.[0]?.thumb}
+              alt={popS?.[0]?.title}
             />
             <div className="MainText-content">
               <div>
                 <h1>1.</h1>
               </div>
               <div>
-                <h3>{popS?.articles?.[0].title}</h3>
-                <p>{popS?.articles?.[0].content}</p>
+                <h3>{popS?.[0]?.title}</h3>
+                <p>{popS?.[0]?.desc}</p>
               </div>
             </div>
           </div>
           <div className="sidebar">
             <ul>
-              {popS?.articles?.map((data, i) => {
+              {popS?.map((data, i) => {
                 if (i < 5 && i >= 1) {
                   return <ListCSB1 data={data} i={i} />;
                 } else {
@@ -173,7 +173,7 @@ export default function page() {
         <div class="main-content2">
           <h2>Berita Terbaru</h2>
           <div class="down-content2">
-            {terS?.articles?.map((data, i) => {
+            {terS?.map((data, i) => {
               if (i < 4) {
                 return <CDownContent data={data} />;
               } else {
@@ -184,7 +184,7 @@ export default function page() {
         </div>
       </section>
 
-      {/*---------------------------------------------------sports end-------------------------------------------------------*/}
+      {/*---------------------------------------------------E-Sports end-------------------------------------------------------*/}
 
       <div className="content">
         <Tema isi="technology" />
@@ -194,22 +194,22 @@ export default function page() {
         <div className="main-content">
           <div className="MainUtama-content">
             <img
-              src={popT?.articles?.[0].urlToImage}
-              alt={popT?.articles?.[0].title}
+              src={popT?.[0]?.thumb}
+              alt={popT?.[0]?.title}
             />
             <div className="MainText-content">
               <div>
                 <h1>1.</h1>
               </div>
               <div>
-                <h3>{popT?.articles?.[0].title}</h3>
-                <p>{popT?.articles?.[0].content}</p>
+                <h3>{popT?.[0]?.title}</h3>
+                <p>{popT?.[0]?.desc}</p>
               </div>
             </div>
           </div>
           <div className="sidebar">
             <ul>
-              {popT?.articles?.map((data, i) => {
+              {popT?.map((data, i) => {
                 if (i < 5 && i >= 1) {
                   return <ListCSB1 data={data} i={i} />;
                 } else {
@@ -225,7 +225,7 @@ export default function page() {
         <div class="main-content2">
           <h2>Berita Terbaru</h2>
           <div class="down-content2">
-            {terT?.articles?.map((data, i) => {
+            {terT?.map((data, i) => {
               if (i < 4) {
                 return <CDownContent data={data} />;
               } else {
@@ -239,29 +239,29 @@ export default function page() {
       {/*----------------------------------------------technology end--------------------------------------------------------*/}
 
       <div className="content">
-        <Tema isi="Entertainment" />
+        <Tema isi="Console Games" />
         <div className="kategori-content">
           <h2>Berita Terpopuler</h2>
         </div>
         <div className="main-content">
           <div className="MainUtama-content">
             <img
-              src={popE?.articles?.[0].urlToImage}
-              alt={popE?.articles?.[0].title}
+              src={popCG?.[0]?.thumb}
+              alt={popCG?.[0]?.title}
             />
             <div className="MainText-content">
               <div>
                 <h1>1.</h1>
               </div>
               <div>
-                <h3>{popE?.articles?.[0].title}</h3>
-                <p>{popE?.articles?.[0].content}</p>
+                <h3>{popCG?.[0]?.title}</h3>
+                <p>{popCG?.[0]?.desc}</p>
               </div>
             </div>
           </div>
           <div className="sidebar">
             <ul>
-              {popE?.articles?.map((data, i) => {
+              {popCG?.map((data, i) => {
                 if (i < 5 && i >= 1) {
                   return <ListCSB1 data={data} i={i} />;
                 } else {
@@ -277,7 +277,7 @@ export default function page() {
         <div class="main-content2">
           <h2>Berita Terbaru</h2>
           <div class="down-content2">
-            {terE?.articles?.map((data, i) => {
+            {terCG?.map((data, i) => {
               if (i < 4) {
                 return <CDownContent data={data} />;
               } else {

@@ -15,14 +15,14 @@ export default function page() {
   const fatch = async () => {
     await axios
       .get(
-        "https://newsapi.org/v2/top-headlines?category=technology&sortBy=popularity&apiKey=ef4a710b2b664894ac22350bc3cb77fd"
+        "https://the-lazy-media-api.vercel.app/api/tech/news?page=1"
       )
       .then((response) => setTer(response.data))
       .catch((error) => new Error(error));
 
     await axios
       .get(
-        "https://newsapi.org/v2/top-headlines?category=technology&apiKey=ef4a710b2b664894ac22350bc3cb77fd"
+        "https://the-lazy-media-api.vercel.app/api/tech?page=1"
       )
       .then((response) => setPop(response.data))
       .catch((error) => new Error(error));
@@ -35,29 +35,29 @@ export default function page() {
   return (
     <>
       <div className="content">
-        <Tema isi="technology" />
+        <Tema isi="Technology" />
         <div className="kategori-content">
           <h2>Berita Terpopuler</h2>
         </div>
         <div className="main-content">
           <div className="MainUtama-content">
             <img
-              src={pop?.articles?.[0].urlToImage}
-              alt={pop?.articles?.[0].title}
+              src={pop?.[0]?.thumb}
+              alt={pop?.[0]?.title}
             />
             <div className="MainText-content">
               <div>
                 <h1>1.</h1>
               </div>
               <div>
-                <h3>{pop?.articles?.[0].title}</h3>
-                <p>{pop?.articles?.[0].content}</p>
+                <h3>{pop?.[0]?.title}</h3>
+                <p>{pop?.[0]?.desc}</p>
               </div>
             </div>
           </div>
           <div className="sidebar">
             <ul>
-              {pop?.articles?.map((data, i) => {
+              {pop?.map((data, i) => {
                 if (i < 5 && i >= 1) {
                   return <ListCSB1 data={data} i={i} />;
                 } else {
@@ -73,7 +73,7 @@ export default function page() {
         <div class="main-content2">
           <h2>Berita Terbaru</h2>
           <div class="down-content2">
-            {ter?.articles?.map((data, i) => {
+            {ter?.map((data, i) => {
               if (i < 4) {
                 return <CDownContent data={data} />;
               } else {
