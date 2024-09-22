@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import "../style/css_reset.css";
 // import "@/style/Style.css";
 
 import Navbar from "@/components/Navbar";
