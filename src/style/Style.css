@@ -1,0 +1,179 @@
+:root {
+  --color-Gray: #f4f4f4;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* .gowun-batang-regular {
+  font-family: "Gowun Batang", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gowun-batang-bold {
+  font-family: "Gowun Batang", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.playfair-display-<uniquifier> {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+p{
+  font-family: "Gowun Batang", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+h2{
+  font-family: "Gowun Batang", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+h3{
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
+}
+h4{
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
+}
+a{
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
+}
+
+body {
+  width: 100vw;
+  padding: 0 20% 0 20%;
+  background-color: aliceblue;
+}
+header {
+  background-color: white;
+  align-items: center;
+}
+/* ------------------------------------------------ */
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.logo img {
+  width: 25px;
+}
+.logo p {
+  font-size: 12px;
+  margin: 5px;
+}
+/* ---------------------------------------------- */
+.navigasi nav ul {
+  list-style: none;
+  background-color: var(--color-Gray);
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid black;
+}
+.navigasi nav ul li {
+  margin: 0 10px;
+}
+.navigasi ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+/* ---------------------------------------------------- */
+.content {
+  display: flex;
+  background-color: white;
+}
+.main-content {
+  width: 60%;
+  margin: 2%;
+}
+.main-content h2 {
+  margin: 0.5rem 0 0.5rem 0;
+}
+.main-content p {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+/* --------------------------------------------------- */
+.down-content {
+  margin: 2%;
+  width: 60%;
+}
+.main-down-content {
+  display: flex;
+  width: 100%;
+  margin: 0.5rem 0 0 0;
+}
+.main-down-content img {
+  width: 20%;
+  height: 20%;
+}
+.main-down-content h4 {
+  padding: 0 0.5rem 0 0.5rem;
+}
+/* ------------------------------------------------------------ */
+.sidebar {
+  width: 40%;
+  margin: 1rem;
+}
+.sidebar ul li {
+  display: flex;
+  padding: 0.5rem;
+  list-style: none;
+  background-color: var(--color-Gray);
+}
+.sidebar img {
+  width: 40%;
+  height: 30%;
+}
+.sidebar a {
+  margin: 0 0.5rem 0 0.5rem;
+  text-decoration-line: none;
+  color: black;
+}
+/* ----------------------------------------------------------- */
+.sidebar2 {
+  width: 40%;
+  margin: 1rem;
+}
+.sidebar2 ol li {
+  margin: 1rem 0 1rem;
+  list-style: none;
+  display: flex;
+  border-bottom: 1px solid black;
+}
+.sidebar2 h1 {
+  margin: 0.2rem;
+}
+.sidebar2 a {
+  margin: 0 0.5rem 0.5rem 0.5rem;
+  text-decoration-line: none;
+  color: black;
+}
+
+@media (max-width: 1023px) {
+  .navigasi nav ul {
+    justify-content: start;
+    overflow-x: scroll;
+  }
+}
+/* -------------------------------------------------------------- */

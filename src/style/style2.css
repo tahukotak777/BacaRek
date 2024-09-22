@@ -1,0 +1,162 @@
+:root {
+  --color-Gray: #f4f4f4;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+p {
+  font-family: "Gowun Batang", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+h2 {
+  font-family: "Gowun Batang", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+h3 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
+}
+h4 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
+}
+a {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
+}
+
+body {
+  width: 100vw;
+  padding: 0 20% 0 20%;
+  background-color: aliceblue;
+}
+header {
+  background-color: white;
+  align-items: center;
+}
+/* ------------------------------------------------ */
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.logo img {
+  width: 25px;
+}
+.logo p {
+  font-size: 12px;
+  margin: 5px;
+}
+/* ---------------------------------------------- */
+.navigasi nav ul {
+  list-style: none;
+  background-color: var(--color-Gray);
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid black;
+}
+.navigasi nav ul li {
+  margin: 0 10px;
+}
+.navigasi ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+/* ----------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .navigasi nav ul {
+    justify-content: start;
+    overflow-x: scroll;
+  }
+}
+/* -------------------------------------------------------------- */
+.content {
+  background-color: white;
+  padding: 1rem;
+}
+.tema-content {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+.tema-content h1 {
+  margin: 0.5rem 0 0.5rem 0;
+}
+.kategori-content h2 {
+  margin: 0.5rem 0 0.5rem 0;
+}
+.main-content {
+  display: flex;
+}
+.MainUtama-content {
+  width: 60%;
+}
+.MainText-content {
+  display: flex;
+  margin-top: 0.5rem;
+}
+.main-content h1 {
+  margin: 0.5rem;
+}
+/* --------------------------------------------------------------- */
+.sidebar {
+  width: 40%;
+}
+.sidebar ul {
+  background-color: var(--color-Gray);
+}
+.sidebar ul li {
+  padding: 0.5rem;
+}
+.main-sidebar {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+}
+.main-sidebar img {
+  width: 20%;
+  height: 20%;
+  margin: 0 0.5rem 0 0.5rem;
+}
+.main-sidebar h3 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
+}
+.main-sidebar a {
+  text-decoration: none;
+  color: black;
+}
+/* ------------------------------------------------------------------- */
+.content2 {
+  background-color: white;
+  padding: 0.5rem;
+}
+.main-content2 h2 {
+  margin: 0.5rem;
+}
+.down-content2 {
+  display: flex;
+  justify-content: space-around;
+}
+.main-down-content2 {
+  margin: 0.5rem;
+}
