@@ -1,4 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import path from 'path';
 
-export default nextConfig;
+export default {
+  webpack: (config) => {
+    // Menggunakan alias '@' yang mengarah ke folder 'src'
+    config.resolve.alias['@'] = path.resolve('./src'); // Sesuaikan 'src' sesuai dengan struktur proyekmu
+    return config;
+  },
+};
