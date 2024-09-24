@@ -111,8 +111,11 @@ header {
 }
 .main-content p {
   margin: 0.5rem 0 0.5rem 0;
+  text-align: justify;
 }
-
+.main-content img{
+  width: 100%;
+}
 /* --------------------------------------------------- */
 .down-content {
   margin: 2%;
