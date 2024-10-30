@@ -51,7 +51,8 @@ export default function Home() {
           <ul>
             {berita?.map((data, i) => {
               if (i < 5) {
-                return <ListSB1 src={data.thumb} title={data.title} />;
+                console.log(data.key)
+                return <ListSB1 src={data.thumb} title={data.title} data={data}/>;
               } else {
                 return null;
               }
