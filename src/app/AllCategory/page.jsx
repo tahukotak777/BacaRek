@@ -98,7 +98,7 @@ export default function page() {
               </div>
               <div>
                 <h3>{popG?.[0]?.title}</h3>
-                <p>{popG?.[0]?.desc}</p>
+                <a href={`/isi?key=${popG?.[0]?.key}`}>{popG?.[0]?.desc}</a>
               </div>
             </div>
           </div>
@@ -150,7 +150,7 @@ export default function page() {
               </div>
               <div>
                 <h3>{popS?.[0]?.title}</h3>
-                <p>{popS?.[0]?.desc}</p>
+                <a href={`/isi?key=${popS?.[0]?.key}`}>{popS?.[0]?.desc}</a>
               </div>
             </div>
           </div>
@@ -202,7 +202,7 @@ export default function page() {
               </div>
               <div>
                 <h3>{popT?.[0]?.title}</h3>
-                <p>{popT?.[0]?.desc}</p>
+                <a href={`/isi?key=${popT?.[0]?.key}`}>{popT?.[0]?.desc}</a>
               </div>
             </div>
           </div>
@@ -254,7 +254,7 @@ export default function page() {
               </div>
               <div>
                 <h3>{popCG?.[0]?.title}</h3>
-                <p>{popCG?.[0]?.desc}</p>
+                <a href={`/isi?key=${popCG?.[0]?.key}`}>{popCG?.[0]?.desc}</a>
               </div>
             </div>
           </div>

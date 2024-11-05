@@ -44,14 +44,13 @@ export default function Home() {
       <div className="content">
         <div className="main-content">
           <img src={berita?.[0]?.thumb} alt={berita?.[0]?.title} />
-          <a href="/AllCategory">{berita?.[0]?.title}</a>
-          <p>{berita?.[0]?.desc}</p>
+          <h1>{berita?.[0]?.title}</h1>
+          <a href={`/isi?key=${berita?.[0]?.key}`}>{berita?.[0]?.desc}</a>
         </div>
         <div className="sidebar">
           <ul>
             {berita?.map((data, i) => {
               if (i < 5) {
-                console.log(data.key)
                 return <ListSB1 src={data.thumb} title={data.title} data={data}/>;
               } else {
                 return null;

@@ -50,7 +50,7 @@ export default function page() {
               </div>
               <div>
                 <h3>{pop?.[0]?.title}</h3>
-                <p>{pop?.[0]?.desc}</p>
+                <a href={`/isi?key=${pop?.[0]?.key}`}>{pop?.[0]?.desc}</a>
               </div>
             </div>
           </div>
